@@ -1,151 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    background-color: #282a36;
+    height: 100%;
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.Overskrift {
+    text-align: center;
+    color: #ff79c6;
+    margin: 10px;
+    padding-top: 25px;
+}
+
+.nav {
+    background-color: #44475a;
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    top: 0;
+    left: 0;
+}
+
+.navcontent {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #f8f8f2;
+    padding: 0 10px;
+    padding-top: 5px;
+    margin: 0;
+    width: 100%;
+}
+
+.Logo {
+    height: 25px;
+    float: right;
+    margin-top: -25px;
+}
+
+footer {
+    background-color: #44475a;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    bottom: 0;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+.DownloadBTN {
+    color: #50FA7B;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px;
+    background-color: #44475A;
+    margin-top: 5%;
+}
+
+.DownloadBTN:hover {
+    background-color: #6272A4;
+    cursor: pointer;
+}
+
+.Overview_TobbeOS {
+    width: 50%;
+    height: 65%;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
     }
-    
+
     body {
         padding: 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space;
-	flex: 1 1 90%;
-        margin: 10px 0;-around;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
-    .Overview_TobbeOS{
-	width: 100%;
-	height: 45%;
+
+    .Overview_TobbeOS {
+        width: 100%;
+        height: 45%;
     }
-    .DownloadBTN{
-	color: #50FA7B;
-	font-weight: bold;
-	font-size: 18px;
-	margin: 10px;
-	background-color: #44475A;
-     }
-     .Logo{
-	     display: none;
-     }
+
+    .DownloadBTN {
+        font-size: 18px;
+        margin: 10px;
+        background-color: #44475A;
+    }
+
+    .Logo {
+        display: none; 
+    }
 }
+
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
     }
-    
+
     body {
-	display: flex;
-	flex-direction: column;
-	justify-content: space;
-	flex: 1 1 90%;
-        margin: 10px 0;-around;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding: 5px;
     }
-    .Overview_TobbeOS{
-	width: 100%;
-	height: 15%;
+
+    .Overview_TobbeOS {
+        width: 100%;
+        height: 15%;
     }
-    .DownloadBTN{
-	color: #50FA7B;
-	font-weight: bold;
-	font-size: 18px;
-	margin: 10px;
-	background-color: #44475A;
-     }
-}
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-ul{
-	color: #f8f8f2;
-	font-size: 18px;
-	margin-left: 10px;
-	list-style: none;
-	margin-top: 10px;
-}
-body{
-	margin: 0;
-	background-color: #282a36;
-	height: 100%;
-	width: 100%;
-	font-family: 'Source Sans 3', sans-serif;
-	display: flex;
-	flex-direction: column;
-}
-html{
-	margin: 0;
-	background-color: #282a36;
-	height: 100%;
-	width: 100%;
-}
-a{
-	text-decoration: none;
-	color: inherit;
-}
-.Overskrift{
-	text-align: center;
-	color: #ff79c6;
-	margin: 10px;
-	padding-top: 25px;
-}
-.nav{
-	background-color: #44475a;
-	position: absolute;
-	width: 100%;
-	height: 35px;
-	top: 0;
-	left: 0;
-}
-.navcontent{
-	list-style: none;
-	display: flex;
-	align-items: center;
-	gap: 20px;
-	color: #f8f8f2;
-	padding: 0 10px;
-	padding-top: 5px;
-	margin: 0;
-	width: 100%;
-}
-.Logo{
-	height: 25px;
-	float: right;
-	margin-top: -25px;
-}
-p{
-	color: #f8f8f2;
-	font-size: 18px;
-	margin-left: 10px;
-}
-h2{
-	margin-left: 10px;
-}
-footer{
-	background-color: #44475a;
-	position: absolute;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 35px;
-	bottom: 0;
-}
-hr{
-	margin-bottom: 20px;
-}
-.DownloadBTN{
-	color: #50FA7B;
-	font-weight: bold;
-	font-size: 18px;
-	margin: 10px;
-	background-color: #44475A;
-	margin-top: 5%;
-}
-.DownloadBTN:hover{
-	background-color: #6272A4;
-	cursor: pointer;
-}
-.Overview_TobbeOS{
-	width: 50%;
-	height: 65%;
+
+    .DownloadBTN {
+        font-size: 16px;
+        margin: 10px;
+        background-color: #44475A;
+    }
 }
