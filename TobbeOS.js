@@ -31,4 +31,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		    alert("Failed to load ISO list.");
 		});
 	}
+
+	const overview = document.getElementById("Overview_TobbeOS");
+	overview.addEventListener("click", TobbeOF_screenshot);
+
+	function TobbeOF_screenshot() {
+		const overview1 = document.getElementById("Overview_TobbeOS");
+		const overlay = document.getElementById("Image_overlay");
+		const closeOverlay = document.getElementById("close_overlay");
+
+		overview1.addEventListener("click", () => {
+			overlay.classList.remove("hidden");
+		});
+
+		closeOverlay.addEventListener("click", () => {
+			overlay.classList.add("hidden");
+		});
+	}
 });
