@@ -1,3 +1,29 @@
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    .Overview_TobbeOS{
+	width: 100%;
+	height: 45%;
+    }
+}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    body {
+        padding: 5px;
+    }
+    .Overview_TobbeOS{
+	width: 100%;
+	height: 15%;
+    }
+}
 *{
 	margin: 0;
 	padding: 0;
@@ -91,4 +117,8 @@ hr{
 .DownloadBTN:hover{
 	background-color: #6272A4;
 	cursor: pointer;
+}
+.Overview_TobbeOS{
+	width: 50%;
+	height: 65%;
 }
