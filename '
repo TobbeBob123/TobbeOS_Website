@@ -1,57 +1,6 @@
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    html, body {
-	    height: 100%;
-	    margin: 0;
-	    padding: 0;
-    }
-    body{
-	    display: flex;
-	    flex-direction: column;
-	    min-height: 100vh;
-    }
-    .Overview_TobbeOS {
-        width: 100%;
-        height: auto;
-    }
-    .Logo{
-	    display: none;
-    }
-    footer{
-	    display: none;
-    }
-}
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    body {
-	display: flex;
-	flex-direction: column;
-	justify-content: space;
-	flex: 1 1 90%;
-        margin: 10px 0;
-        padding: 5px;
-    }
-    .Overview_TobbeOS{
-	width: 100%;
-	height: auto;
-    }
-    .Logo{
-	    display: none;
-    }
-    footer{
-	    display: none;
-    }
-}
 *{
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
 ul{
 	color: #f8f8f2;
@@ -60,26 +9,20 @@ ul{
 	list-style: none;
 	margin-top: 10px;
 }
-body{
-	margin: 0;
-	background-color: #282a36;
-	width: 100%;
-	font-family: 'Source Sans 3', sans-serif;
+body, html{
 	display: flex;
 	flex-direction: column;
-}
-html{
+	min-height: 100vh;
 	margin: 0;
 	background-color: #282a36;
-	width: 100%;
+	font-family: 'Source Sans 3', sans-serif;
 }
 a{
 	text-decoration: none;
 	color: inherit;
 }
-main {
+.content {
 	flex: 1;
-	padding: 10px;
 }
 .Overskrift{
 	text-align: center;
@@ -150,9 +93,8 @@ h2{
 #Image_overlay.hidden {
   display: none;
 }
+
 #Image_overlay img {
-  max-width: 95%;
-  max-height: 90%;
   border: 2px solid #fff;
   border-radius: 8px;
 }
@@ -164,11 +106,11 @@ h2{
   color: white;
   cursor: pointer;
 }
-footer{
+.footer{
 	position: fixed;
 	bottom: 0;
-	justify-content: center;
-	display: flex;
+	left: 0;
+	right: 0;
 	margin-top: auto;
 	background-color: #44475a;
 	width: 100%;

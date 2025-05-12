@@ -6,13 +6,13 @@
 	<link rel='stylesheet' type='text/css' href='style.css'>
 	<script src='TobbeOS.js'></script>
 	<link rel='icon' href='logo/Tobbeosalt.png' type='image/png'> 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
-<main>
-	<body>
+<body>
+	<div class='wrapper'>
 		<div class='nav'>
 			<ul class='navcontent'>
 				<li><p><a href='About_us.html'>About</a></p></li>
@@ -21,6 +21,7 @@
 			</ul>
 			<img src='logo/TobbeOS_logo.png' alt='TobbeOS Logo' class='Logo'>
 		</div>
+	<main class='content'>
 		<h1 class='Overskrift'>TobbeOS Linux</h1>
 		<hr>
 		<h2>Welcome to TobbeOS!!</h2>
@@ -28,15 +29,17 @@
 		TobbeOS to welcome new user to Linux and we make sure 
 		it both easy to use and a learning tool with a beutiful top bar and a classic 
 		filebrowser and a beutiful desktop.</p> 
-		<img src='logo/TobbeOS_Screenshot.png' class='Overview_TobbeOS' id='Overview_TobbeOS'><br>
+		<img src='logo/TobbeOS_Screenshot.png' class='Overview_TobbeOS' id='Overview_TobbeOS'>
 		<div id='Image_overlay' class='hidden'>
 			<span id='close_overlay'>&times;</span>
-			<img src='logo/TobbeOS_Screenshot.png'>
+			<img src='logo/TobbeOS_Screenshot.png'><br>
 		</div>
-		<input type='button' class='DownloadBTN' id='DownloadBTN' value='Download Latest' />
-	</body>
-</main>
-<footer>
-	<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
-</footer>
+		<input type='button' class='DownloadBTN' id='DownloadBTN' value='Download Latest'\>
+	</main>
+
+		<footer class='footer'>
+			<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
+		</footer>
+	</div>
+</body>
 </html>
