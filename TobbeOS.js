@@ -48,4 +48,28 @@ document.addEventListener("DOMContentLoaded", function () {
 			overlay.classList.add("hidden");
 		});
 	}
+	let currentSlide = 0;
+	const slides = document.querySelectorAll('.slide');
+	const prev = document.getElementById('prev');
+	const next = document.getElementById('next');
+	prev.addEventListener("click", () => changeSlide(-1));
+	next.addEventListener("click", () => changeSlide(1));
+
+	function showSlide(index) {
+	  slides.forEach((slide, i) => {
+	    slide.style.display = (i === index) ? 'block' : 'none';
+	  });
+	}
+	function changeSlide(step) {
+	  currentSlide = (currentSlide + step + slides.length) % slides.length;
+	  showSlide(currentSlide);
+	}
+
+	// Auto-play (optional)
+	setInterval(() => {
+	  changeSlide(1);
+	}, 4000); // 4 seconds
+
+	// Initial display
+	showSlide(currentSlide);
 });
