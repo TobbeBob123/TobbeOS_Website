@@ -88,13 +88,13 @@ hr{
 	background-color: #6272A4;
 	cursor: pointer;
 }
-.Overview_TobbeOS{
+#Overview_TobbeOS{
 	width: 50%;
 	height: 65%;
 	margin-top: 10px;
 	margin-left: 10px;
 }
-.Overview_TobbeOS:hover{
+#Overview_TobbeOS:hover{
 	cursor: pointer;
 }
 #Image_overlay {
@@ -125,6 +125,14 @@ hr{
   font-size: 2rem;
   color: white;
   cursor: pointer;
+}
+.slideshow-container {
+  position: relative;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.prev, .next:hover{
+	cursor: pointer;
 }
 footer{
 	bottom: 0;
