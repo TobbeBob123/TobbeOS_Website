@@ -82,6 +82,7 @@ hr{
 	width: 99%;
 	margin-top: 10px;
 	margin-left: 10px;
+	margin-bottom: 10px;
 }
 .DownloadBTN:hover{
 	background-color: #6272A4;
