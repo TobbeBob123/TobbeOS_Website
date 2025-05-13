@@ -33,15 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	const overview = document.getElementById("Overview_TobbeOS");
-	overview.addEventListener("click", TobbeOF_screenshot);
+	overview.addEventListener("click", TobbeOF_screenshot)
 
 	function TobbeOF_screenshot() {
-		const overview1 = document.getElementById("Overview_TobbeOS");
+		const overviewInFunc = document.querySelectorAll(".slide");
 		const overlay = document.getElementById("Image_overlay");
 		const closeOverlay = document.getElementById("close_overlay");
+		const overlayImage = overlay.querySelector("img");
 
-		overview1.addEventListener("click", () => {
-			overlay.classList.remove("hidden");
+		overviewInFunc.forEach(overviewInFunc => {
+			overviewInFunc.addEventListener("click", () => {
+				overlayImage.src = overviewInFunc.src;
+				overlay.classList.remove("hidden");
+			});
 		});
 
 		closeOverlay.addEventListener("click", () => {
