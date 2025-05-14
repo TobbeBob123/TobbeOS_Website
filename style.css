@@ -105,6 +105,14 @@ hr{
 	margin-left: 10px;
 	bottom: 0;
 }
+.avatar{
+	margin-top: 10px;
+	position: absolute;
+	height: 300px;
+	width: 300px;
+	top: 30%;
+	left: 30%;
+}
 #Image_overlay {
   position: fixed;
   top: 0;
