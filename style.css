@@ -22,14 +22,7 @@
 		display: none;
 	}
 	footer{
-		justify-content: center;
-		font-size: 12px;
-		display: flex;
-		margin-top: auto;
-		background-color: #44475a;
-		width: 100%;
-		align-items: center;
-		height: 15px;
+		display: none;
 	}
 }
 
@@ -57,14 +50,7 @@
 		display: none;
 	}
 	footer{
-		justify-content: center;
-		font-size: 12px;
-		display: flex;
-		margin-top: auto;
-		background-color: #44475a;
-		width: 100%;
-		align-items: center;
-		height: 15px;
+		display: none;
 	}
 }
 
@@ -92,14 +78,7 @@
 		display: none;
 	}
 	footer{
-		justify-content: center;
-		display: flex;
-		font-size: 12px;
-		margin-top: auto;
-		background-color: #44475a;
-		width: 100%;
-		align-items: center;
-		height: 15px;
+		display: none;
 	}
 }
 *{
