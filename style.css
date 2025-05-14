@@ -92,7 +92,7 @@ hr{
 	width: 50%;
 	height: 65%;
 	margin-top: 10px;
-	margin-left: 10px;
+	margin-left: 22px;
 	float: left;
 }
 #Overview_TobbeOS:hover{
@@ -131,6 +131,17 @@ hr{
   position: relative;
   margin: 20px auto;
   overflow: hidden;
+}
+.prev{
+	position: absolute;
+	left; 10px;
+	top: 50%;
+	right: 99%;
+}
+.next{
+	position: absolute;
+	right; 50%;
+	top: 50%;
 }
 .prev, .next:hover{
 	cursor: pointer;
