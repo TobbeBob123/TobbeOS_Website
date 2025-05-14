@@ -83,6 +83,7 @@ hr{
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-bottom: 10px;
+	overflow: visible;
 }
 .DownloadBTN:hover{
 	background-color: #6272A4;
@@ -97,6 +98,12 @@ hr{
 }
 #Overview_TobbeOS:hover{
 	cursor: pointer;
+}
+.sc a{
+	position: absolute;
+	left: 0;
+	margin-left: 10px;
+	bottom: 0;
 }
 #Image_overlay {
   position: fixed;

@@ -1,8 +1,59 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const download = document.getElementById("DownloadBTN");
 
+	download.addEventListener('mouseover', downloadfromSOverflow);
 	download.addEventListener("click", downloadfromS);
 
+	function showFilenameTooltip(filename, x, y) {
+	    const tooltip = document.createElement('div');
+	    tooltip.textContent = filename;
+	    tooltip.style.position = 'absolute';
+	    tooltip.style.left = `${x + 10}px`;
+	    tooltip.style.top = `${y + 10}px`;
+	    tooltip.style.background = '#333';
+	    tooltip.style.color = '#fff';
+	    tooltip.style.padding = '6px 10px';
+	    tooltip.style.borderRadius = '6px';
+	    tooltip.style.fontSize = '14px';
+	    tooltip.style.zIndex = '1000';
+	    tooltip.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+	    document.body.appendChild(tooltip);
+
+	    // Auto-remove after 2 seconds
+	    setTimeout(() => {
+		tooltip.remove();
+	    }, 1000);
+	}
+	
+	function downloadfromSOverflow(event) {
+		fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/'))
+		.then(response => response.text())
+		.then(html => {
+		    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
+		    const matches = [...html.matchAll(regex)].map(match => match[0]);
+
+		    if (matches.length === 0) {
+			alert("No ISO files found.");
+			return;
+		    }
+
+		    // Sort by date descending
+		    matches.sort((a, b) => {
+			const dateA = a.match(/\d{4}\.\d{2}\.\d{2}/)[0];
+			const dateB = b.match(/\d{4}\.\d{2}\.\d{2}/)[0];
+			return new Date(dateB) - new Date(dateA);
+		    });
+
+		    const latestFile = matches[0];
+		    const downloadUrl = `https://tobbeos.lysakermoen.com/${latestFile}`;
+
+		    showFilenameTooltip(latestFile, event.clientX, event.clientY);
+		})
+		.catch(err => {
+		    console.error("Fetch failed:", err);
+		    alert("Failed to load ISO list.");
+		});
+	}
 	function downloadfromS() {
 		fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/'))
 		.then(response => response.text())
