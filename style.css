@@ -155,8 +155,9 @@ hr{
 }
 .next{
 	position: absolute;
-	right; 50%;
+	left: 51%;
 	top: 50%;
+	margin-left: 10px;
 }
 .prev, .next:hover{
 	cursor: pointer;
