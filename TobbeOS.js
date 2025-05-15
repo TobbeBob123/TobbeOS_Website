@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 		.catch(err => {
 		    console.error("Fetch failed:", err);
-		    alert("Failed to load ISO list.");
 		});
 	}
 	function downloadfromS() {
