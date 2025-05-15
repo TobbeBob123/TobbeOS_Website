@@ -167,6 +167,7 @@ hr{
 	margin-left: 10px;
 	margin-bottom: 10px;
 	overflow: visible;
+	border-color: #BD93F9;
 }
 .DownloadBTN:hover{
 	background-color: #6272A4;
@@ -222,7 +223,7 @@ hr{
   top: 15px;
   right: 20px;
   font-size: 2rem;
-  color: white;
+  color: #f8f8f2;
   cursor: pointer;
 }
 .slideshow-container {
@@ -231,6 +232,7 @@ hr{
   overflow: hidden;
 }
 .prev{
+	color: #f8f8f2;
 	position: absolute;
 	left; 10px;
 	top: 50%;
@@ -238,6 +240,7 @@ hr{
 }
 .next{
 	position: absolute;
+	color: #f8f8f2;
 	left: 51%;
 	top: 50%;
 	margin-left: 10px;
