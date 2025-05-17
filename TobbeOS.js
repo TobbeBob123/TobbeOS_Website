@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const download = document.getElementById("DownloadBTN");
-
-	download.addEventListener('mouseover', downloadfromSOverflow);
-	download.addEventListener("click", downloadfromS);
+	if (download) {
+		download.addEventListener('mouseover', downloadfromSOverflow);
+		download.addEventListener("click", downloadfromS);
+	}
 
 	function showFilenameTooltip(filename, x, y) {
 	    const tooltip = document.createElement('div');
@@ -81,9 +82,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		    alert("Failed to load ISO list.");
 		});
 	}
-
-	const overview = document.getElementById("Overview_TobbeOS");
-	overview.addEventListener("click", TobbeOF_screenshot)
+	const overview1 = document.getElementById("Overview_News");
+	const overview2 = document.getElementById("Overview_TobbeOS");
+	if (overview1) {
+		overview1.addEventListener("click", TobbeOF_screenshot)
+	}
+	else {
+		overview2.addEventListener("click", TobbeOF_screenshot)
+	}
 
 	function TobbeOF_screenshot() {
 		const overviewInFunc = document.querySelectorAll(".slide");

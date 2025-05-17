@@ -94,6 +94,7 @@ ul{
 	margin-top: 10px;
 }
 body{
+	position: relative;
 	margin: 0;
 	width: 100%;
 	height: 100%;
@@ -115,6 +116,7 @@ main {
 	flex: 1;
 }
 .wrapper {
+	position: relative;
 	width: 100%;
 	font-family: 'Source Sans 3', sans-serif;
 	background-color: #282a36;
@@ -182,6 +184,27 @@ hr{
 }
 #Overview_TobbeOS:hover{
 	cursor: pointer;
+}
+#Overview_News{
+	position: fixed;
+	top: 20%;
+	right: 30%;
+	width: 50%;
+	height: 65%;
+	transform: translateX(50%);
+	z-index: 1000;
+}
+#Overview_News:hover{
+	cursor: pointer;
+}
+.News_info{
+	position: absolute;
+	left: 5%;
+	top: 90%;
+	font-size: 90px;
+}
+.News_info p{
+	font-size: 30px;
 }
 .sc a{
 	position: absolute;
