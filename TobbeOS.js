@@ -113,8 +113,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	const slides = document.querySelectorAll('.slide');
 	const prev = document.getElementById('prev');
 	const next = document.getElementById('next');
-	prev.addEventListener("click", () => changeSlide(-1));
-	next.addEventListener("click", () => changeSlide(1));
+	if (prev || next) {
+		prev.addEventListener("click", () => changeSlide(-1));
+		next.addEventListener("click", () => changeSlide(1));
+	}
 
 	function showSlide(index) {
 	  slides.forEach((slide, i) => {
