@@ -175,6 +175,25 @@ hr{
 	background-color: #6272A4;
 	cursor: pointer;
 }
+.DownloadBTN_new{
+	position: absolute;
+	top: 400%;
+	left: 0%;
+	color: #282a36;
+	font-weight: bold;
+	font-size: 18px;
+	background-color: #F1FA8C;
+	width: 40%;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	overflow: visible;
+	border-color: #BD93F9;
+}
+.DownloadBTN_new:hover{
+	background-color: #6272A4;
+	cursor: pointer;
+}
 #Overview_TobbeOS{
 	width: 50%;
 	height: 65%;
