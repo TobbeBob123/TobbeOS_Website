@@ -1,3 +1,10 @@
+window.onload = function() {
+	if (!sessionStorage.getItem("reloaded")) {
+		 sessionStorage.setItem("reloaded", "true");
+		 location.reload();
+	}
+};
+
 document.addEventListener("DOMContentLoaded", function () {
 	const download = document.getElementById("DownloadBTN");
 
