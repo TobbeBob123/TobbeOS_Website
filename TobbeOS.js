@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const download = document.getElementById("DownloadBTN");
-	if (download) {
-		download.addEventListener('mouseover', downloadfromSOverflow);
-		download.addEventListener("click", downloadfromS);
-	}
 
 	function showFilenameTooltip(filename, x, y) {
 	    const tooltip = document.createElement('div');
@@ -26,8 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	    }, 1000);
 	}
 	
-	function downloadfromSOverflow(event) {
-		fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/'))
+	let latestFile = null;
+	let downloadUrl = null;
+	async function downloadfromS() {
+		return fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/'))
 		.then(response => response.text())
 		.then(html => {
 		    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
@@ -45,43 +43,29 @@ document.addEventListener("DOMContentLoaded", function () {
 			return new Date(dateB) - new Date(dateA);
 		    });
 
-		    const latestFile = matches[0];
-		    const downloadUrl = `https://tobbeos.lysakermoen.com/${latestFile}`;
-
-		    showFilenameTooltip(latestFile, event.clientX, event.clientY);
-		})
-		.catch(err => {
-		    console.error("Fetch failed:", err);
-		});
-	}
-	function downloadfromS() {
-		fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/'))
-		.then(response => response.text())
-		.then(html => {
-		    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
-		    const matches = [...html.matchAll(regex)].map(match => match[0]);
-
-		    if (matches.length === 0) {
-			alert("No ISO files found.");
-			return;
-		    }
-
-		    // Sort by date descending
-		    matches.sort((a, b) => {
-			const dateA = a.match(/\d{4}\.\d{2}\.\d{2}/)[0];
-			const dateB = b.match(/\d{4}\.\d{2}\.\d{2}/)[0];
-			return new Date(dateB) - new Date(dateA);
-		    });
-
-		    const latestFile = matches[0];
-		    const downloadUrl = `https://tobbeos.lysakermoen.com/${latestFile}`;
-		    window.location.href = downloadUrl;
+	            latestFile = matches[0];
+		    downloadUrl = `https://tobbeos.lysakermoen.com/${latestFile}`;
 		})
 		.catch(err => {
 		    console.error("Fetch failed:", err);
 		    alert("Failed to load ISO list.");
 		});
 	}
+
+	download.addEventListener("click", async (event) => {
+	    const down = event.button === 0;
+	    await downloadfromS().then(() => {
+		    if (down) {
+			    window.location.href = downloadUrl;
+		    }
+	    });
+	});
+	download.addEventListener("mouseover", async (event) => {
+	    await downloadfromS().then(() => {
+		    showFilenameTooltip(latestFile, event.clientX, event.clientY);
+	    });
+	});
+
 	const overview1 = document.getElementById("Overview_News");
 	const overview2 = document.getElementById("Overview_TobbeOS");
 	if (overview1) {
