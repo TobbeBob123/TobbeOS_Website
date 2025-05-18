@@ -273,23 +273,6 @@ hr{
   margin: 20px auto;
   overflow: hidden;
 }
-.prev{
-	color: #f8f8f2;
-	position: absolute;
-	left; 10px;
-	top: 50%;
-	right: 99%;
-}
-.next{
-	position: absolute;
-	color: #f8f8f2;
-	left: 51%;
-	top: 50%;
-	margin-left: 10px;
-}
-.prev, .next:hover{
-	cursor: pointer;
-}
 .Keys_desc {
 	position: absolute;
 	font-size: 25px;
