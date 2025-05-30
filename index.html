@@ -11,60 +11,103 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
-<main>
-	<body>
-		<div class='wrapper'>
-			<div class='nav'>
-				<ul class='navcontent'>
-					<li><p><a href='About_us.html'>About</a></p></li>
-					<li><p><a href='release_note.html'>Release Notes</a></p></li>
-					<li><p><a href='http://tobbeos.lysakermoen.com/'>Download</a></p></li>
-					<li><p><a href='news.html'>News!!!</a></p></li>
-				</ul>
-				<img src='logo/TobbeOS_logo.png' alt='TobbeOS Logo' class='Logo'>
-			</div>
-			<h1 class='Overskrift'>TobbeOS Linux</h1>
-			<hr>
-			<h2>Welcome to TobbeOS!!</h2>
-			<p>TobbeOS is a GNU/Linux distro based on Arch Linux. We made 
-			TobbeOS to welcome new user to Linux and we make sure 
-			it both easy to use and a learning tool with a beutiful top bar and a classic 
-			filebrowser and a beutiful desktop. The desktop is build on a Window manager called Qtile.</p>
-			<div class='slideshow-container'>
-				<div>
-					<img src='News_Screenshots/TobbeOS_Screenshot.png' class='slide' id='Overview_TobbeOS'>
-					<img src='News_Screenshots/Alacritty.png' class='slide' id='Overview_TobbeOS'>
-					<img src='logo/Dracula_TobbeOS.png' class='slide' id='Overview_TobbeOS'>
+<body>
+	<div class='wrapper'>
+		<div class='nav'>
+			<ul class='navcontent'>
+				<li><p><a href='About_us.html'>About</a></p></li>
+				<li><p><a href='release_note.html'>Release Notes</a></p></li>
+				<li><p><a href='http://tobbeos.lysakermoen.com/'>Download</a></p></li>
+				<li><p><a href='news.html'>News!!!</a></p></li>
+			</ul>
+			<img src='logo/TobbeOS_logo.png' alt='TobbeOS Logo' class='Logo'>
+		</div>
+	<main>
+		<h1 class='Overskrift'>TobbeOS Linux</h1>
+		<h2 style='text-align: center; padding-top: 0;'>A Arch-based distribution for both new users and enthusiasts.</h2>
+		<input type='button' class='DownloadBTN' id='DownloadBTN' value='Download Latest' />
+		<section class='why-tobbeos'>
+			<div class='container'>
+				<h2>Why TobbeOS?<h2>
+				<div class='why-tobbeos-grid'>
+					<div class='why-tobbeos-card'>
+						<kbd>Easy to use</kbd>
+						<p>TobbeOS comes with a Keyboard Shortcut Overview and with normal app launcher for easy use</p>
+					</div>
+					<div class='why-tobbeos-card'>
+						<kbd>Learning tool</kbd>
+						<p>Its configurable for both new users to linux and enthusiasts</p>
+					</div>
+					<div class='why-tobbeos-card'>
+						<kbd>Easy to install</kbd>
+						<p>Easy script to install and great to learn linux and learn terminal</p>
+					</div>
 				</div>
 			</div>
-			<div id='Image_overlay' class='hidden'>
-				<span id='close_overlay' class='close_overlay'>&times;</span>
-				<img src='News_Screenshots/TobbeOS_Screenshot.png'>
+		<div class='slideshow-container'>
+			<h2>TobbeOS Overview</h2>
+			<div>
+				<img src='News_Screenshots/TobbeOS_Screenshot.png' class='slide' id='Overview_TobbeOS'>
+				<img src='News_Screenshots/Alacritty.png' class='slide' id='Overview_TobbeOS'>
+				<img src='logo/Dracula_TobbeOS.png' class='slide' id='Overview_TobbeOS'>
 			</div>
-			<div id='Image_overlay' class='hidden'>
-				<span id='close_overlay' class='close_overlay'>&times;</span>
-				<img src='News_Screenshots/Alacritty.png'>
-			</div>	
-			<div id='Image_overlay' class='hidden'>
-				<span id='close_overlay' class='close_overlay'>&times;</span>
-				<img src='logo/Dracula_TobbeOS.png'>
-			</div>
-			<ul class='Keys_desc'>Important keys to know about:
-				<li>Mod = Super key (Windows key)</li>
-				<li>Mod + E - Open Emacs - Need to install with script tobbeos/emacs_install.sh</li>
-				<li>Mod + Return - Open Terminal (Kitty)</li>
-				<li>Mod + s - Show hotkeys</li>
-				<li>Mod + left Shift + s - Show alias for fish shell</li>
-				<li>Mod + left Shift + Tab - Open web browser (Zen)</li>
-				<li>Mod + left Shift + q - kill window</li>
-				<li>Mod + d - Rofi (Program Launcher)</li>
-			</ul>
-			<input type='button' class='DownloadBTN' id='DownloadBTN' value='Download Latest' />
-			<footer class='footer'>
-				<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
-				<p class='sc'><a href='https://gitlab.com/TobbeBob123/TobbeOS'>Source Code</a></p>
-			</footer>
 		</div>
-	</body>
-</main>
+		<div id='Image_overlay' class='hidden'>
+			<span id='close_overlay' class='close_overlay'>&times;</span>
+			<img src='News_Screenshots/TobbeOS_Screenshot.png'>
+		</div>
+		<div id='Image_overlay' class='hidden'>
+			<span id='close_overlay' class='close_overlay'>&times;</span>
+			<img src='News_Screenshots/Alacritty.png'>
+		</div>	
+		<div id='Image_overlay' class='hidden'>
+			<span id='close_overlay' class='close_overlay'>&times;</span>
+			<img src='logo/Dracula_TobbeOS.png'>
+		</div>
+		<section class='shortcuts'>
+			<div class='container'>
+				<h2>Keyboard Shortcuts<h2>
+				<div class='shortcuts-grid'>
+					<div class='shortcuts-card'>
+						<kbd>Mod</kbd>
+						<p>Windows key</p>
+					</div>
+					<div class='shortcuts-card'>
+						<kbd>Mod + E</kbd>
+						<p>Open Emacs</p>
+					</div>
+					<div class='shortcuts-card'>
+						<kbd>Mod + Return</kbd>
+						<p>Open Terminal (Kitty)</p>
+					</div>
+					<div class='shortcuts-card'>
+						<kbd>Mod + s</kbd>
+						<p>Show hotkeys</p>
+					</div>
+					<div class='shortcuts-card'>
+						<kbd>Mod + left Shift + s</kbd>
+						<p>Show alias for fish shell</p>
+					</div>
+					<div class='shortcuts-card'>
+						<kbd>Mod + left Shift + Tab</kbd>
+						<p>Open web browser</p>
+					</div>
+					<div class='shortcuts-card'>
+						<kbd>Mod + left Shift + q</kbd>
+						<p>kill window</p>
+					</div>
+					<div class='shortcuts-card'>
+						<kbd>Mod + d</kbd>
+						<p>Launch Program Launcher</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+		<footer>
+			<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
+			<p class='sc'><a href='https://gitlab.com/TobbeBob123/TobbeOS'>Source Code</a></p>
+		</footer>
+	</div>
+</body>
 </html>

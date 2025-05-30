@@ -10,54 +10,65 @@
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 
 </head>
-<main>
-	<body>
-		<div class='wrapper'>
-			<div class='nav'>
-				<ul class='navcontent'>
-					<li><p><a href='index.html'>Home</a></p></li>
-					<li><p><a href='About_us.html'>About</a></p></li>
-					<li><p><a href='http://tobbeos.lysakermoen.com/'>Download</a></p></li>
-					<li><p><a href='news.html'>News!!!</a></p></li>
-				</ul>
-				<img src='logo/TobbeOS_logo.png' alt='TobbeOS Logo' class='Logo'>
-			</div>
-			<h1 class='Overskrift'>Release notes</h1>
-			<hr>
-			<ul>Release 25.04.2025:
-				<li><p>Added support for BIOS boot option.</p></li>
-				<li><p>Added kernel option either common Linux kernel and Linux-lts kernel.</p></li>
-				<li><p>Added TobbeOS pre-grub for BIOS boot.</p></li>
+<body>
+	<div class='wrapper'>
+		<div class='nav'>
+			<ul class='navcontent'>
+				<li><p><a href='index.html'>Home</a></p></li>
+				<li><p><a href='About_us.html'>About</a></p></li>
+				<li><p><a href='http://tobbeos.lysakermoen.com/'>Download</a></p></li>
+				<li><p><a href='news.html'>News!!!</a></p></li>
 			</ul>
-			<ul>Release 27.04.2025:
-				<li><p>Added support to encrypt disk.</p></li>
-				<li><p>Added default shell to Fish shell.</p></li>
-			</ul>
-			<ul>Release 30.04.2025:
-				<li><p>Fixed the output when choosen not to install TobbeOS emacs.</p></li>
-				<li><p>Fixed bug (The bug was that the Fish shell didn't set when installing TobbeOS emacs).</p></li>
-			</ul>
-			<ul>Release 01.05.2025:
-				<li><p>Added TobbeOS neofetch</p></li>
-				<li><p>Added TobbeOS as a proper OS (OS rename)</p></li>
-			</ul>
-			<ul>Release 02.05.2025:
-				<li><p>Added option for filesystem, either BTRFS or EXT4.</p></li>
-			</ul>
-			<ul>Release 17.05.2025:
-				<li><p>Installing xcopy for nvim to copy to system clipboard</p></li>
-				<li><p>Added Alacritty as terminal (replaces Kitty)</p></li>
-				<li><p>Changed power meny to accept case-sensitive</p></li>
-				<li><p>Better screenshot, now with option of custom filename</p></li>
-				<li><p>Changed Nvim config to Lua (Replace .vim).</p></li>
-				<li><p>Nvim with LSP. (Python, HTML, CSS, Javascript, LUA).</p></li>
-				<li><p>Nvim plugin for orgmode</p></li>
-			</ul>
-			<footer>
-				<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
-				<p class='sc'><a href='https://gitlab.com/TobbeBob123/TobbeOS'>Source Code</a></p>
-			</footer>
+			<img src='logo/TobbeOS_logo.png' alt='TobbeOS Logo' class='Logo'>
 		</div>
-	</body>
-</main>
+	<main>
+		<h1 class='Overskrift'>Release notes<h1>
+		<section class='release-notes'>
+			<div class='container'>
+				<div class='release-notes-grid'>
+					<div class='release-notes-card'>
+						<kbd>Release 25.04.2025</kbd>
+						<p>Added support for BIOS boot option</p>
+						<p>Added kernel option either common Linux kernel and Linux-lts kernel</p>
+						<p>Added TobbeOS pre-grub for BIOS boot</p>
+					</div>
+					<div class='release-notes-card'>
+						<kbd>Release 27.04.2025</kbd>
+						<p>Added support to encrypt disk</p>
+						<p>Added default shell to Fish shell</p>
+					</div>
+					<div class='release-notes-card'>
+						<kbd>Release 30.04.2025</kbd>
+						<p>Fixed the output when choosen not to install TobbeOS emacs</p>
+						<p>Fixed bug (The bug was that the Fish shell didn't set when installing TobbeOS emacs)</p>
+					</div>
+					<div class='release-notes-card'>
+						<kbd>Release 01.05.2025</kbd>
+						<p>Added TobbeOS neofetch</p>
+						<p>Added TobbeOS as a proper OS (OS rename)</p>
+					</div>
+					<div class='release-notes-card'>
+						<kbd>Release 02.05.2025</kbd>
+						<p>Added option for filesystem, either BTRFS or EXT4</p>
+					</div>
+					<div class='release-notes-card'>
+						<kbd>Release 17.05.2025</kbd>
+						<p>Installing xcopy for nvim to copy to system clipboard</p>
+						<p>Added Alacritty as terminal (replaces Kitty)</p>
+						<p>Changed power meny to accept case-sensitive</p>
+						<p>Better screenshot, now with option of custom filename</p>
+						<p>Changed Nvim config to Lua</p>
+						<p>Nvim with LSP. (Python, HTML, CSS, Javascript, LUA)</p>
+						<p>Nvim plugin for orgmode</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+		<footer>
+			<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
+			<p class='sc'><a href='https://gitlab.com/TobbeBob123/TobbeOS'>Source Code</a></p>
+		</footer>
+	</div>
+</body>
 </html>

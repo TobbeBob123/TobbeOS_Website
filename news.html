@@ -11,9 +11,8 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
-<main>
-	<body>
-		<div class='wrapper'>
+<body>
+	<div class='wrapper'>
 			<div class='nav'>
 				<ul class='navcontent'>
 					<li><p><a href='index.html'>Home</a></p></li>
@@ -23,18 +22,25 @@
 				</ul>
 				<img src='logo/TobbeOS_logo.png' alt='TobbeOS Logo' class='Logo'>
 			</div>
-			<h1 class='Overskrift'>News</h1>
-			<hr>
-			<h2>TobbeOS release 17.05..2025 is here!!!</h2>
-			<ul class='News_info'> Feature and fixes
-				<li><p>Installing xcopy for nvim to copy to system clipboard.</p></li>
-				<li><p>Added Alacritty as terminal (replaces Kitty).</p></li>
-				<li><p>Changed power meny to accept case-sensitive.</p></li>
-				<li><p>Better screenshot, now with option of custom filename.</p></li>
-				<li><p>Changed Nvim config to Lua (Replace .vim).</p></li>
-				<li><p>Nvim with LSP. (Python, HTML, CSS, Javascript, LUA).</p></li>
-				<li><p>Nvim plugin for orgmode.</p></li>
-			</ul>
+	<main>
+		<h1 class='Overskrift' style='position: fixed; top: 20px; left: 50%;'>News</h1>
+		<h2 style='padding-top: 0; position: fixed; top: 70px; right: 80%;'>TobbeOS release 17.05..2025 is here!!!</h2>
+		<section class='News_info'>
+			<h3>Feature and fixes</h3>
+			<div class='container'>
+				<div class='News_info-grid'>
+					<div class='News_info-card'>
+						<p>Installing xcopy for nvim to copy to system clipboard</p>
+						<p>Added Alacritty as terminal (replaces Kitty)</p>
+						<p>Changed power meny to accept case-sensitive</p>
+						<p>Better screenshot, now with option of custom filename</p>
+						<p>Changed Nvim config to Lua</p>
+						<p>Nvim with LSP. (Python, HTML, CSS, Javascript, LUA)</p>
+						<p>Nvim plugin for orgmode</p>
+					</div>
+				</div>
+			</div>
+		</section>
 			<div class='slideshow-container'>
 				<div>
 					<img src='News_Screenshots/Nvim_lazyvim.png' class='slide' id='Overview_News'>
@@ -50,11 +56,11 @@
 				<img src='News_Screenshots/Better_Screenshot.png'>
 			</div>	
 			<input type='button' class='DownloadBTN_new' id='DownloadBTN' value='Download now!' />
-			<footer>
+	</main>
+			<footer class='footer'>
 				<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
 				<p class='sc'><a href='https://gitlab.com/TobbeBob123/TobbeOS'>Source Code</a></p>
 			</footer>
-		</div>
-	</body>
-</main>
+	</div>
+</body>
 </html>

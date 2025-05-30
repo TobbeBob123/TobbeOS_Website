@@ -1,86 +1,3 @@
-@media (max-width: 1024px) {
-	  body {
-	    font-size: 12px;
-	    background-color: #282a36;
-            margin: 0;
-	    padding: 0;
-	    box-sizing: border-box;
-	 }
-	.prev{
-		display: none;
-	}
-	.next{
-		display: none;
-	}
-	.Keys_desc {
-		display: none;
-	}
-	.Logo{
-		display: none;
-	}
-	.avatar{
-		display: none;
-	}
-	footer{
-		display: none;
-	}
-}
-
-@media (max-width: 768px) {
-	  body {
-	    font-size: 12px;
-	    background-color: #282a36;
-            margin: 0;
-	    padding: 0;
-	    box-sizing: border-box;
-	 }
-	.prev{
-		display: none;
-	}
-	.next{
-		display: none;
-	}
-	.Keys_desc {
-		display: none;
-	}
-	.Logo{
-		display: none;
-	}
-	.avatar{
-		display: none;
-	}
-	footer{
-		display: none;
-	}
-}
-
-@media (max-width: 480px) {
-	  body {
-	    font-size: 12px;
-	    background-color: #282a36;
-            margin: 0;
-	    padding: 0;
-	    box-sizing: border-box;
-	 }
-	.prev{
-		display: none;
-	}
-	.next{
-		display: none;
-	}
-	.Keys_desc {
-		display: none;
-	}
-	.Logo{
-		display: none;
-	}
-	.avatar{
-		display: none;
-	}
-	footer{
-		display: none;
-	}
-}
 *{
 	margin: 0;
 	padding: 0;
@@ -94,14 +11,19 @@ ul{
 	margin-top: 10px;
 }
 body{
-	position: relative;
 	margin: 0;
 	width: 100%;
+	line-height: 1.6;
 	height: 100%;
 	display: flex;
-	flex-direction: grid;
+	flex-direction: column;
 	background-color: #282a36;
 	font-family: 'Source Sans 3', sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 html{
 	margin: 0;
@@ -114,6 +36,8 @@ a{
 }
 main {
 	flex: 1;
+	margin-bottom: 4rem; 
+	text-align: center;
 }
 .wrapper {
 	position: relative;
@@ -130,6 +54,7 @@ main {
 	background-color: #44475a;
 	width: 100%;
 	height: 35px;
+	margin-bottom: 10%;
 }
 .navcontent{
 	list-style: none;
@@ -145,7 +70,7 @@ main {
 .Logo{
 	height: 25px;
 	float: right;
-	margin-top: -25px;
+	margin-top: -30px;
 }
 p{
 	color: #f8f8f2;
@@ -153,8 +78,8 @@ p{
 	margin-left: 10px;
 }
 h2{
-	margin-left: 10px;
-	color: #f8f8f2;
+	color: #BD93F9;
+	padding-top: 10%;
 }
 hr{
 	margin-bottom: 10px;
@@ -164,7 +89,7 @@ hr{
 	font-weight: bold;
 	font-size: 18px;
 	background-color: #44475A;
-	width: 99%;
+	width: 25%;
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-bottom: 10px;
@@ -176,9 +101,9 @@ hr{
 	cursor: pointer;
 }
 .DownloadBTN_new{
-	position: absolute;
-	top: 400%;
-	left: 0%;
+	position: fixed;
+	top: 85%;
+	left: 5%;
 	color: #50FA7B;
 	font-weight: bold;
 	font-size: 18px;
@@ -199,30 +124,37 @@ hr{
 	height: 65%;
 	margin-top: 10px;
 	margin-left: 22px;
-	float: left;
+	top: 50%;
+	left: 25%;
+	bottom: 50%;
+	position: relative;
 }
 #Overview_TobbeOS:hover{
 	cursor: pointer;
 }
 #Overview_News{
 	position: fixed;
-	top: 20%;
-	right: 30%;
+	top: 25%;
+	left: 25%;
 	width: 50%;
 	height: 65%;
 	transform: translateX(50%);
-	z-index: 1000;
+	padding-bottom: 40px;
+	padding-right: 10px;
 }
 #Overview_News:hover{
 	cursor: pointer;
 }
 .News_info{
-	position: absolute;
-	left: 3%;
-	top: 90%;
+	position: fixed;
+	left: 5%;
+	top: 20%;
 	font-size: 90px;
 }
 .News_info p{
+	font-size: 30px;
+}
+.about_us p{
 	font-size: 30px;
 }
 .sc a{
@@ -256,6 +188,7 @@ hr{
 }
 #Image_overlay img {
   max-width: 95%;
+  float: center;
   max-height: 90%;
   border: 2px solid #BD93F9;
   border-radius: 1px;
@@ -269,25 +202,96 @@ hr{
   cursor: pointer;
 }
 .slideshow-container {
-  position: relative;
   margin: 20px auto;
   overflow: hidden;
+  float: center;
 }
-.Keys_desc {
-	position: absolute;
-	font-size: 25px;
-	width: 50%;
-	top: 55%;
-	left: 75%;
-	text-align: center;
-	transform: translate(-50%, -50%);
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.shortcuts-card {
+    background-color: #44475A;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+.why-tobbeos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.why-tobbeos-card {
+    background-color: #44475A;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+kbd {
+    background-color: #44475A;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #ff79c6;
+}
+.release-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.release-notes-card {
+    background-color: #44475A;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+.News_info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.News_info-card {
+    background-color: #44475A;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
 }
 footer{
+	justify-content: center;
+	display: flex;
+	margin-top: 10px;
+	background-color: #44475a;
+	width: 100%;
+	align-items: center;
+	height: 25px;
+}
+.footer{
 	position: fixed;
 	bottom: 0;
 	justify-content: center;
 	display: flex;
-	margin-top: auto;
 	background-color: #44475a;
 	width: 100%;
 	align-items: center;
