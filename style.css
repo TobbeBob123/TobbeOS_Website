@@ -153,6 +153,7 @@ hr{
 	left: 5%;
 	top: 20%;
 	font-size: 90px;
+	max-width: 45%;
 }
 .News_info p{
 	font-size: 30px;
