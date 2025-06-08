@@ -287,6 +287,12 @@ kbd {
     gap: 1.5rem;
 }
 
+.sf-root{
+	position: absolute;
+	top:2%;
+	right: 10px;
+}
+
 .News_info-card {
     background-color: #44475A;
     padding: 1.5rem;
