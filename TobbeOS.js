@@ -5,6 +5,20 @@ window.onload = function() {
 	}
 };
 
+const imageUrl = "logo/TobbeOS_logo.png"; 
+
+console.log(
+  "%c ",
+  `
+    font-size: 1px;
+    padding: 100px 200px;
+    background-image: url(${imageUrl});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  `
+);
+
 document.addEventListener("DOMContentLoaded", function () {
 	const download = document.getElementById("DownloadBTN");
 
