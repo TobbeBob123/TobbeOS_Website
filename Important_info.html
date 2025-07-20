@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <html lang='en'>
 <head>
 	<meta charset='UTF-8'>
@@ -18,40 +19,23 @@
 					<li><p><a href='index.html'>Home</a></p></li>
 					<li><p><a href='About_us.html'>About</a></p></li>
 					<li><p><a href='release_note.html'>Release Notes</a></p></li>
-					<li><p><a href='Important_info.html'>Important info</a></p></li>
+					<li><p><a href="news.html">News!!</a></p></li>
 					<li id='downloadNav' ><p><a href="https://tobbeos.lysakermoen.com">Download</a></p></li>
 				</ul>
 				<img src='logo/TobbeOS_logo.png' alt='TobbeOS Logo' class='Logo'>
 			</div>
 	<main>
-		<h1 class='Overskrift' style='position: fixed; top: 20px; left: 40%; right: 40%; padding-top: 10px;'>News</h1>
-		<h2 style='padding-top: 0; position: fixed; top: 70px; right: 65%; width: 40%;'>TobbeOS release 06.07.2025 is here!!!</h2>
-		<section class='News_info'>
-			<h3>Feature and fixes</h3>
+		<h1 class='Overskrift'>Important info and bug fixes</h1>
+		<section class='Important-info'>
 			<div class='container'>
-				<div class='News_info-grid'>
-					<div class='News_info-card'>
-						<p>added support for golang and c++.</p>
-						<p>added support for golang and c++ in neovim</p>
+				<div class='Important-info-grid'>
+					<div class='Important-info-card'>
+						<kbd>To fix this bug where the top bar dont load.</kbd>
+						<p>Remove all the Qtile-extras from the qtile config file and delete Qtile-extras-git with yf qtile-extras-git</p>
 					</div>
 				</div>
 			</div>
 		</section>
-			<div class='slideshow-container'>
-				<div>
-					<img src='News_Screenshots/Nvim_lazyvim.png' class='slide' id='Overview_News'>
-					<img src='News_Screenshots/Golang_support.png' class='slide' id='Overview_News'>
-				</div>
-			</div>
-			<div id='Image_overlay' class='hidden'>
-				<span id='close_overlay' class='close_overlay'>&times;</span>
-				<img src='News_Screenshots/Nvim_lazyvim.png'>
-			</div>
-			<div id='Image_overlay' class='hidden'>
-				<span id='close_overlay' class='close_overlay'>&times;</span>
-				<img src='News_Screenshots/Better_Screenshot.png'>
-			</div>	
-			<input type='button' class='DownloadBTN_new' id='DownloadBTN' value='Download now!' />
 	</main>
 			<footer class='footer'>
 				<p>License: GNU General Public License version 2.0/General Public License version 3.0 </p>
