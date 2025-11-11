@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	let latestFile = null;
 	let downloadUrl = null;
 	async function downloadfromS() {
-		return fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/'))
+		return fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'))
 		.then(response => response.text())
 		.then(html => {
 		    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		    });
 
 	            latestFile = matches[0];
-		    downloadUrl = `https://tobbeos.lysakermoen.com/${latestFile}`;
+		    downloadUrl = `https://tobbeos.lysakermoen.com/iso/${latestFile}`;
 		})
 		.catch(err => {
 		    console.error("Fetch failed:", err);
