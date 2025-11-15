@@ -71,16 +71,29 @@ main {
 	color: #6272A4
 }
 #downloadNav{
-	background-color: #50FA7B;
-	width: 5.5%;
+	background-color: #44475a;
 	height: 30px;
-}
-#downloadNav p{
-	color: #FF5555;
+	width: 110px;
+	color: #50FA7B;
 	font-weight: bold;
+	font-size: 20px;
+	border-color: #BD93F9;
 }
 #downloadNav:hover{
         background-color: #BD93F9;
+	cursor: pointer;
+}
+#mirrorNav{
+	background-color: #44475a;
+	height: 30px;
+	width: 140px;
+	color: #FF5555;
+	font-weight: bold;
+	font-size: 20px;
+}
+#mirrorNav:hover{
+        background-color: #BD93F9;
+	cursor: pointer;
 }
 .Logo{
 	height: 25px;
@@ -181,6 +194,10 @@ hr{
 	left: 0;
 	margin-left: 10px;
 	bottom: 0;
+}
+.sc:hover {
+	cursor: pointer;
+	color: #6272A4;
 }
 .avatar{
 	margin-top: 10px;
