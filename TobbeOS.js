@@ -6,10 +6,55 @@ window.onload = function() {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-
 	const mirrorSite = document.getElementById("mirrorNav");
 	function mirrorPage() {
 		window.location.href = 'https://tobbeos.lysakermoen.com/iso/';
 	}
 	mirrorSite.addEventListener("click", mirrorPage);
+
+	const overview1 = document.getElementById("Overview_News");
+	const overview2 = document.getElementById("Overview_TobbeOS");
+	if (overview1) {
+		overview1.addEventListener("click", TobbeOF_screenshot)
+	}
+	else {
+		overview2.addEventListener("click", TobbeOF_screenshot)
+	}
+
+	function TobbeOF_screenshot() {
+		const overviewInFunc = document.querySelectorAll(".slide");
+		const overlay = document.getElementById("Image_overlay");
+		const closeOverlay = document.getElementById("close_overlay");
+		const overlayImage = overlay.querySelector("img");
+
+		overviewInFunc.forEach(overviewInFunc => {
+			overviewInFunc.addEventListener("click", () => {
+				overlayImage.src = overviewInFunc.src;
+				overlay.classList.remove("hidden");
+			});
+		});
+
+		closeOverlay.addEventListener("click", () => {
+			overlay.classList.add("hidden");
+		});
+	}
+	let currentSlide = 0;
+	const slides = document.querySelectorAll('.slide');
+
+	function showSlide(index) {
+	  slides.forEach((slide, i) => {
+	    slide.style.display = (i === index) ? 'block' : 'none';
+	    });
+	}
+	function changeSlide(step) {
+	  currentSlide = (currentSlide + step + slides.length) % slides.length;
+	  showSlide(currentSlide);
+	}
+
+	setInterval(() => {
+	  changeSlide(1);
+	}, 10000);
+
+	showSlide(currentSlide);
+
 });
