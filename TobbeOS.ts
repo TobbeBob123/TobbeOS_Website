@@ -10,43 +10,49 @@ document.addEventListener("DOMContentLoaded", function () {
 	function mirrorPage() {
 		window.location.href = 'https://tobbeos.lysakermoen.com/iso/';
 	}
-	mirrorSite.addEventListener("click", mirrorPage);
-
+	if (mirrorSite) {
+		mirrorSite.addEventListener("click", mirrorPage);
+	}
 	const overview1 = document.getElementById("Overview_News");
 	const overview2 = document.getElementById("Overview_TobbeOS");
 	if (overview1) {
 		overview1.addEventListener("click", TobbeOF_screenshot)
 	}
-	else {
+	else if (overview2) {
 		overview2.addEventListener("click", TobbeOF_screenshot)
 	}
 
 	function TobbeOF_screenshot() {
-		const overviewInFunc = document.querySelectorAll(".slide");
+		const overviewInFunc = document.querySelectorAll<HTMLImageElement>(".slide");
 		const overlay = document.getElementById("Image_overlay");
 		const closeOverlay = document.getElementById("close_overlay");
-		const overlayImage = overlay.querySelector("img");
+		let overlayImage: HTMLImageElement | null = null;
+		if (overlay) {
+			overlayImage = overlay.querySelector("img");
+		}
 
-		overviewInFunc.forEach(overviewInFunc => {
-			overviewInFunc.addEventListener("click", () => {
-				overlayImage.src = overviewInFunc.src;
+		overviewInFunc.forEach(img => {
+			img.addEventListener("click", () => {
+				if (!overlayImage || !overlay) return;
+				overlayImage.src = img.src;
 				overlay.classList.remove("hidden");
 			});
 		});
 
+		if (!overlay || !closeOverlay) return;
 		closeOverlay.addEventListener("click", () => {
 			overlay.classList.add("hidden");
 		});
 	}
 	let currentSlide = 0;
-	const slides = document.querySelectorAll('.slide');
+	const slides = document.querySelectorAll<HTMLImageElement>('.slide');
 
-	function showSlide(index) {
-	  slides.forEach((slide, i) => {
-	    slide.style.display = (i === index) ? 'block' : 'none';
-	    });
+	function showSlide(index: number) {
+		  slides.forEach((slide, i) => {
+		    slide.style.display = (i === index) ? 'block' : 'none';
+		    });
 	}
-	function changeSlide(step) {
+	function changeSlide(step: number) {
 	  currentSlide = (currentSlide + step + slides.length) % slides.length;
 	  showSlide(currentSlide);
 	}

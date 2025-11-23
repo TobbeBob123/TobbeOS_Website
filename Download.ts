@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const download = document.getElementById("DownloadBTN");
-
-	function showFilenameTooltip(filename, x, y) {
+	function showFilenameTooltip(filename: string,  x: number, y: number) {
 	    const tooltip = document.createElement('div');
 	    tooltip.textContent = filename;
 	    tooltip.style.position = 'absolute';
@@ -20,45 +19,47 @@ document.addEventListener("DOMContentLoaded", function () {
 		tooltip.remove();
 	    }, 1000);
 	}
-	
-	let latestFile = null;
-	let downloadUrl = null;
+
+	let latestFile = '';
+	let downloadUrl = '';
 	async function downloadfromS() {
-		return fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'))
-		.then(response => response.json())
-		.then(data => {
-		    const html = data.contents;
+	     return await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'))
+		.then(res => res.json())
+		.then((data: { contents: string }) => {
+		    const html: string = data.contents;
 		    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
-		    const matches = [...html.matchAll(regex)].map(match => match[0]);
+		    const matches: string[] = [...html.matchAll(regex)].map(match => match[0]);
 
 		    if (matches.length === 0) {
 			alert("No ISO files found.");
+			console.log(matches);
 			return;
 		    }
 
-		    matches.sort((a, b) => {
-			const dateA = a.match(/\d{4}\.\d{2}\.\d{2}/)[0];
-			const dateB = b.match(/\d{4}\.\d{2}\.\d{2}/)[0];
-			return new Date(dateB) - new Date(dateA);
+		    matches.sort((a: string, b: string) => {
+			const dateA = a.match(/\d{4}\.\d{2}\.\d{2}/)![0];
+			const dateB = b.match(/\d{4}\.\d{2}\.\d{2}/)![0];
+			return new Date(dateB).getTime() - new Date(dateA).getTime()
 		    });
 
-	            latestFile = matches[0];
+		    latestFile = matches[0];
 		    downloadUrl = `https://tobbeos.lysakermoen.com/iso/${latestFile}`;
-		})
-		.catch(err => {
-		    console.error("Fetch failed:", err);
-		    alert("Failed to load ISO list.");
+		}).catch(err => {
+			console.log(err);
 		});
 	}
 	async function downloadHandle() {
 		await downloadfromS()
 		window.location.href = downloadUrl;
 	}
-	async function tooltipHandle(event) {
+	async function tooltipHandle(event: MouseEvent) {
 		await downloadfromS();
-		showFilenameTooltip(latestFile, event.clientX, event.clientY);
+		if (latestFile) {
+			showFilenameTooltip(latestFile, event.clientX, event.clientY);
+		}
 	}
-
-	download.addEventListener("click", downloadHandle);
-	download.addEventListener("mouseover", tooltipHandle);
+	if (download) {
+		download.addEventListener("click", downloadHandle);
+		download.addEventListener("mouseover", tooltipHandle);
+	}
 });
