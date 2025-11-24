@@ -12,7 +12,7 @@ $(() => {
 	$('#mirrorNav').on('click', function() {
 		window.location.href = 'https://tobbeos.lysakermoen.com/iso/';
 	});
-	slides = document.querySelectorAll<HTMLImageElement>('.slide');
+	slides = document.querySelectorAll('.slide');
 	showSlide(currentSlide);
 	$('#DownloadBTN').on('click', downloadHandle);
 	$('#DownloadBTN').on('mouseover', tooltipHandle);
@@ -79,9 +79,7 @@ function showFilenameTooltip(filename: string,  x: number, y: number) {
 let latestFile = '';
 let downloadUrl = '';
 async function downloadfromS() {
-     return await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'))
-	.then(res => res.json())
-	.then((data: { contents: string }) => {
+     return $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'), function (data) {
 	    const html: string = data.contents;
 	    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
 	    const matches: string[] = [...html.matchAll(regex)].map(match => match[0]);
@@ -100,8 +98,6 @@ async function downloadfromS() {
 
 	    latestFile = matches[0];
 	    downloadUrl = `https://tobbeos.lysakermoen.com/iso/${latestFile}`;
-	}).catch(err => {
-		console.log(err);
 	});
 }
 async function downloadHandle() {

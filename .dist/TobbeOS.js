@@ -72,9 +72,7 @@ function showFilenameTooltip(filename, x, y) {
 let latestFile = '';
 let downloadUrl = '';
 async function downloadfromS() {
-    return await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'))
-        .then(res => res.json())
-        .then((data) => {
+    return $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'), function (data) {
         const html = data.contents;
         const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
         const matches = [...html.matchAll(regex)].map(match => match[0]);
@@ -90,8 +88,6 @@ async function downloadfromS() {
         });
         latestFile = matches[0];
         downloadUrl = `https://tobbeos.lysakermoen.com/iso/${latestFile}`;
-    }).catch(err => {
-        console.log(err);
     });
 }
 async function downloadHandle() {
