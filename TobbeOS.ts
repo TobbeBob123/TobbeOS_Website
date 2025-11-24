@@ -79,7 +79,7 @@ function showFilenameTooltip(filename: string,  x: number, y: number) {
 let latestFile = '';
 let downloadUrl = '';
 async function downloadfromS() {
-     const url: string = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/') + '&_=' + Date.now();
+     const url: string = 'https://tobbeos.lysakermoen.com/iso/';
      $.get(url)
 	    .done(function (html) {
 	    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
