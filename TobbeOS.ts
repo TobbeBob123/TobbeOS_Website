@@ -80,9 +80,8 @@ let latestFile = '';
 let downloadUrl = '';
 async function downloadfromS() {
      const url: string = 'https://tobbeos.lysakermoen.com/iso/';
-     $.getJSON(url)
-	    .done(function (data) {
-	    const html = data.contents;
+     $.get(url)
+	    .done(function (html) {
 	    const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
 	    const matches: string[] = [...html.matchAll(regex)].map(match => match[0]);
 
