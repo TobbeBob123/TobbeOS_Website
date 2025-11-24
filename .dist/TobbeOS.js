@@ -72,8 +72,9 @@ function showFilenameTooltip(filename, x, y) {
 let latestFile = '';
 let downloadUrl = '';
 async function downloadfromS() {
-    return $.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/'), function (data) {
-        const html = data.contents;
+    const url = 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://tobbeos.lysakermoen.com/iso/') + '&_=' + Date.now();
+    $.get(url)
+        .done(function (html) {
         const regex = /TobbeOS-(\d{4}\.\d{2}\.\d{2})-x86_64\.iso/g;
         const matches = [...html.matchAll(regex)].map(match => match[0]);
         if (matches.length === 0) {
@@ -82,12 +83,15 @@ async function downloadfromS() {
             return;
         }
         matches.sort((a, b) => {
-            const dateA = a.match(/\d{4}\.\d{2}\.\d{2}/)[0];
-            const dateB = b.match(/\d{4}\.\d{2}\.\d{2}/)[0];
-            return new Date(dateB).getTime() - new Date(dateA).getTime();
+            const dateA = a.match(/\d{4}\.\d{2}\.\d{2}/);
+            const dateB = b.match(/\d{4}\.\d{2}\.\d{2}/);
+            return new Date(dateB[0]).getTime() - new Date(dateA[0]).getTime();
         });
         latestFile = matches[0];
         downloadUrl = `https://tobbeos.lysakermoen.com/iso/${latestFile}`;
+    })
+        .fail(function (textStatus, error) {
+        console.log('Request failed: ', textStatus, error);
     });
 }
 async function downloadHandle() {
