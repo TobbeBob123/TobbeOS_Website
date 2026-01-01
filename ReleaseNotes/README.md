@@ -55,3 +55,7 @@
 
 12.11.2025
 Themes and GTK installing with chaotic-aur due to the death of GTK2.
+
+01.12.2025
+Bitwarden custom fuzzy finder as bin system wide.
+custom web search as bin system wide.
