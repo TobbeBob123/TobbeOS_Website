@@ -53,9 +53,12 @@
 * Option to not show password for input in TobbeOS Fuzzy finder (Uses bitwarden CLI)
 * Added alias to run TobbeOS fuzzy finder (Bitwarden CLI No offical)
 
-12.11.2025
+12.11.2025:
 Themes and GTK installing with chaotic-aur due to the death of GTK2.
 
-01.12.2025
+01.12.2025:
 Bitwarden custom fuzzy finder as bin system wide.
 custom web search as bin system wide.
+
+01.01.2026:
+TobbeOS supports swap.
