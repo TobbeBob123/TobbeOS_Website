@@ -62,3 +62,9 @@ custom web search as bin system wide.
 
 01.01.2026:
 TobbeOS supports swap.
+
+01.02.2026:
+Added a way to change password in power menu.
+
+07.03.2026:
+Changes term from Wezterm to Ghostty.
